@@ -1,0 +1,22 @@
+.full{
+    background-color: #f8f8f8;
+    width: 835px;
+    padding-left: 30px;
+}
+.firstdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.firstdiv h4{
+    font-size: 18px;
+    font-weight: 500;
+}
+.firstdiv button{
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    color: white;
+    border-radius: 10%;
+}
