@@ -1,5 +1,7 @@
+
 /*eslint-disable */
 import React from "react";
+import { Outlet } from "react-router-dom";
 import "../css/community.css"
 
 function Community() {
@@ -21,5 +23,4 @@ function Community() {
         </div>
     );
 };
-
 export default Community;

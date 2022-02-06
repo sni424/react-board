@@ -1,3 +1,8 @@
+
+.main{
+  display: flex;
+  width: 3000px;
+}
 .leftbar-ca{
     width: 60px;
   }

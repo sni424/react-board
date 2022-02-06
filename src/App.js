@@ -1,11 +1,11 @@
 /*eslint-disable */
-import React, { useState } from 'react';
-import { Route, Routes, Link, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Leftheader from './view/Leftheader';
 import Community from './view/Community';
-import MainCommunity from './view/MainCommunity';
 import Write from './view/Write';
+import Data from "./db/data.json"
 
 function App() {
 
@@ -15,20 +15,24 @@ function App() {
     setCommunity(!community);
   };
 
+  useEffect(() => {
+    console.log(Data.titles);
+  });
+
+
   return (
     <div className="App">
-      <Switch>
-        <Route exact path="/">
-          <Leftheader showCommnutiy={showCommnutiy}></Leftheader>
-          {community === true
+      <Routes>
+        <Route path="/*" element={<Leftheader showCommnutiy={showCommnutiy}></Leftheader>}>
+          <Route path='/*' element={community === true
             ? <Community></Community>
-            : null}
-          <MainCommunity></MainCommunity>
+            : null
+          } />
+
         </Route>
-        <Route path="/write" >
-          <Write></Write>
+        <Route path="/write" element={<Write></Write>}>
         </Route>
-      </Switch>
+      </Routes>
     </div >
   );
 }
