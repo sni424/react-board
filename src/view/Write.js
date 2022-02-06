@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Data from "../db/data.json"
 import moment from 'moment';
@@ -46,4 +47,16 @@ function Write() {
     );
 };
 
+=======
+import React from "react";
+
+function Write() {
+    return (
+        <div>
+            <h1>hi</h1>
+        </div>
+    );
+};
+
+>>>>>>> master
 export default Write;
