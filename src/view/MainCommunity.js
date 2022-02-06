@@ -1,15 +1,26 @@
 /*eslint-disable */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, Link, Switch } from "react-router-dom";
 import "../css/maincommunity.css"
 import Second_logo from "../img/second-logo.png"
-import Write from "./Write";
+import Data from "../db/data.json"
 
-function MainCommunity() {
+function MainCommunity(props) {
+    const [count, setCount] = useState(0);
+
+    function onChange() {
+        setCount(count + 1)
+    }
+
+    useEffect(() => {
+        console.log("Count change")
+    }, [count])
+
     return (
         <div className="full">
             <div className="firstdiv">
                 <h4>커뮤니티</h4>
+                <button onClick={onChange}>{count}</button>
                 <Link to="/write">
                     <button>
                         <i className="fa fa-pencil">
@@ -41,7 +52,7 @@ function MainCommunity() {
             </div>
             <div className="lastdiv">
                 <ul className="last-ul">
-                    <Newli></Newli>
+                    <Newli title={Data.titles[0].title}></Newli>
                     <Newli></Newli>
                     <Newli></Newli>
                     <Newli></Newli>
@@ -57,7 +68,7 @@ function MainCommunity() {
     );
 };
 
-function Newli() {
+function Newli(props) {
     return (
         <>
             <li>
@@ -66,7 +77,7 @@ function Newli() {
                         <span>#1151540</span>
                         <a href="#">공지사항</a>
                     </div>
-                    <h5>[okky] Clone Coding 어렵지 않아요~!</h5>
+                    <h5>{props.title}</h5>
                 </div>
                 <div className="second-notice">
                     <ul className="second-notice-ul">
@@ -88,5 +99,8 @@ function Newli() {
         </>
     );
 };
+Newli.defaultProps = {
+    title: "[okky] Clone Coding 어렵지 않아요~!"
+}
 
 export default MainCommunity;
