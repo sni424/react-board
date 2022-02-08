@@ -7,7 +7,6 @@ import Community from './view/Community';
 import Write from './view/Write';
 import Readview from './view/Readview';
 import Setview from './view/Setview';
-import useFetch from './hooks/useFetch';
 
 function App() {
 
