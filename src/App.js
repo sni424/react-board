@@ -6,8 +6,7 @@ import Leftheader from "./view/Leftheader";
 import Community from './view/Community';
 import Write from './view/Write';
 import Readview from './view/Readview';
-import Data from "./db/data.json"
-import useFetch from './hooks/useFetch';
+import Setview from './view/Setview';
 
 function App() {
 
@@ -17,21 +16,34 @@ function App() {
     setCommunity(!community);
   };
 
-  let Data = useFetch("http://localhost:3001/titles");
+  let [Data, setData] = useState([]);
+  useEffect(() => {
+    const reloadProfile = async () => {
+      try {
+        let profileData = await fetch("http://localhost:3001/titles");
+        let newData = await profileData.json();
+        return setData(newData);
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    reloadProfile();
+  }, ["http://localhost:3001/titles"]);
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/*" element={<Leftheader showCommnutiy={showCommnutiy}></Leftheader>}>
+        <Route path="/*" element={<Leftheader Data={Data} showCommnutiy={showCommnutiy}></Leftheader>}>
           <Route path='/*' element={community === true
             ? <Community ></Community>
             : null
           } />
 
         </Route>
-        <Route path="/write" element={<Write></Write>}>
+        <Route path="/write" element={<Write Data={Data}></Write>}>
         </Route>
-        <Route path="/read" element={<Readview Data={Data}></Readview>}></Route>
+        <Route path="/:link_id" element={<Readview Data={Data}></Readview>}></Route>
+        <Route path="/setview:link_id" element={<Setview Data={Data}></Setview>}></Route>
       </Routes>
     </div >
   );
