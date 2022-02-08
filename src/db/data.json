@@ -1,19 +1,24 @@
 {
-    "titles": [
-        {
-            "id": 1,
-            "title": "hello",
-            "contents": "good"
-        },
-        {
-            "id": 2,
-            "title": "hello",
-            "contents": "good"
-        },
-        {
-            "id": 3,
-            "title": "hello",
-            "contents": "good"
-        }
-    ]
+  "titles": [
+    {
+      "id": 3,
+      "title": "fdsafds",
+      "contents": "fdsafdsafd"
+    },
+    {
+      "id": 4,
+      "title": "새글쓰기",
+      "contents": "usehistory"
+    },
+    {
+      "id": 5456456,
+      "title": "fdsfds",
+      "contents": "fdsfdsfd"
+    },
+    {
+      "title": "4556456",
+      "contents": "65465+456",
+      "id": 45645
+    }
+  ]
 }
