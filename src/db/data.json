@@ -1,24 +1,42 @@
 {
-  "titles": [
+  "boards": [
     {
-      "id": 3,
-      "title": "fdsafds",
-      "contents": "fdsafdsafd"
+      "postid": 65465456465465,
+      "title": "The Cloud Waste Problem",
+      "contents": "With the public cloud adoption increasing year over year, companies will spend nearly $121.6 billion in IaaS (Infrastructure as a Service) in 2022 from AWS, Azure, Google, and other cloud service providersh111\n\n",
+      "id": 1
     },
     {
-      "id": 4,
-      "title": "새글쓰기",
-      "contents": "usehistory"
+      "postid": 123456789,
+      "title": "test5",
+      "contents": "test6",
+      "id": 3
     },
     {
-      "id": 5456456,
-      "title": "fdsfds",
-      "contents": "fdsfdsfd"
+      "postid": 456789,
+      "title": "test5",
+      "contents": "test5",
+      "id": 4
+    }
+  ],
+  "boardsreply": [
+    {
+      "sameId": 1,
+      "comment": "test4",
+      "like": 0,
+      "id": 8
     },
     {
-      "title": "4556456",
-      "contents": "65465+456",
-      "id": 45645
+      "sameId": 3,
+      "comment": "나는나다",
+      "like": 0,
+      "id": 9
+    },
+    {
+      "sameId": 3,
+      "comment": "좋아요",
+      "like": 0,
+      "id": 10
     }
   ]
 }
