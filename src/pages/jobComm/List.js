@@ -1,11 +1,11 @@
 import React from "react";
 import BoardList from "components/Board/List";
 
-function StudyList() {
+function JobList() {
 
-    const boardUrl = 'http://localhost:8000/studyBoards';
-    const detailUrl = 'studyBoard';
-    const createUrl = 'studyWrite';
+    const boardUrl = 'http://localhost:8000/jobBoards';
+    const detailUrl = 'jobBoard';
+    const createUrl = 'jobWrite';
 
     return (
         <BoardList
@@ -15,4 +15,4 @@ function StudyList() {
     );
 };
 
-export default StudyList;
+export default JobList;

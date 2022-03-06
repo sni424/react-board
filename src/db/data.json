@@ -7,22 +7,25 @@
       "id": 1
     },
     {
-      "postid": 123456789,
-      "title": "test5",
-      "contents": "test6",
-      "id": 3
+      "id": 3,
+      "title": "React 꿀잼 인정?",
+      "contents": "인정!"
     },
     {
-      "postid": 456789,
-      "title": "test5",
-      "contents": "test5",
-      "id": 4
+      "id": 4,
+      "title": "백엔드 공부는 어떻게 함?",
+      "contents": "너무 어렵던데 python도 가능?"
+    },
+    {
+      "id": 5,
+      "title": "오늘 게시판 끝남? 이정도면 괜찮으려나?",
+      "contents": "근데 컴포넌트가 너무 많아서 더러워..."
     }
   ],
-  "boardsreply": [
+  "boardsReply": [
     {
       "sameId": 1,
-      "comment": "test4",
+      "comment": "좋아요",
       "like": 0,
       "id": 8
     },
@@ -37,6 +40,68 @@
       "comment": "좋아요",
       "like": 0,
       "id": 10
+    }
+  ],
+  "studyBoards": [
+    {
+      "id": 1,
+      "title": "React 같이하실분 프로젝트까지 생각 중입니다.",
+      "contents": "React 같이하실분 프로젝트까지 생각 중입니다.\n"
+    },
+    {
+      "id": 2,
+      "title": "javascript 스터디원 1분 구합니다.",
+      "contents": "오픈 카톡:000000"
+    },
+    {
+      "id": 3,
+      "title": "django로 aibnb 클론코딩 하실분",
+      "contents": "제발요!!"
+    }
+  ],
+  "studyReply": [
+    {
+      "sameId": 1,
+      "comment": "좋아요",
+      "like": 0,
+      "id": 8
+    }
+  ],
+  "jobBoards": [
+    {
+      "postid": 65465456465465,
+      "title": "프론트엔드 신입1분 구합니다.",
+      "contents": "프론트엔드 신입1분 구합니다.",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "java 및 spring 백엔드 경력직 2분 구합니다.",
+      "contents": "아래 연락처로 이력서 및 연락 가능한 번호 1나 부탁드립니다."
+    }
+  ],
+  "jobReply": [
+    {
+      "sameId": 1,
+      "comment": "저요 카카오톡 id:findajob123",
+      "like": 0,
+      "id": 8
+    }
+  ],
+  "qnaBoards": [
+    {
+      "postid": 65465456465465,
+      "title": "react props에 관해 질문드립니다.",
+      "contents": "너무 어려워요.",
+      "id": 1
+    }
+  ],
+  "qnaReply": [
+    {
+      "sameId": 1,
+      "comment": "공부를 더 하세요",
+      "like": 0,
+      "id": 8
     }
   ]
 }

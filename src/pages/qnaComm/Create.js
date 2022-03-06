@@ -1,10 +1,10 @@
 import React from "react";
 import BoardCreate from "components/Board/Create";
 
-function ComunityCreate() {
+function QnACreate() {
 
-    const createLink = 'http://localhost:8000/boards';
-    const preUrl = "/Board";
+    const createLink = 'http://localhost:8000/qnaBoards';
+    const preUrl = "/qnaBoard";
 
     return (
         <BoardCreate
@@ -14,4 +14,4 @@ function ComunityCreate() {
 };
 
 
-export default ComunityCreate;
+export default QnACreate;

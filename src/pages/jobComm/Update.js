@@ -1,10 +1,10 @@
 import React from "react";
 import BoardUpdate from "components/Board/Update";
 
-function StudyUpdate() {
+function JobUpdate() {
 
-    const boardUrl = 'http://localhost:8000/studyBoards';
-    const preUrl = 'studyBoard/detail';
+    const boardUrl = 'http://localhost:8000/jobBoards';
+    const preUrl = 'jobBoard/detail';
     return (
         <BoardUpdate
             boardUrl={boardUrl}
@@ -13,4 +13,4 @@ function StudyUpdate() {
     );
 };
 
-export default StudyUpdate;
+export default JobUpdate;

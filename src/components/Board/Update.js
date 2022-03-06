@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import NavMain from "../../components/navMain/NavMain";
 import EditFooter from '../../components/reply/EditFooter';
+import Header from "components/Header";
 
-function BoardUpdate({ boardUrl }) {
+function BoardUpdate({ boardUrl, preUrl }) {
 
     const [loaDing, setLoaDing] = useState(true);
 
@@ -51,7 +52,7 @@ function BoardUpdate({ boardUrl }) {
             },
         }).then(() => {
             alert("생성이 완료되었습니다.");
-            navi(`/${setid}`);
+            navi(`/${preUrl}/${setid}`);
         }).catch(err => {
             return alert(err.message);
         })
@@ -62,6 +63,7 @@ function BoardUpdate({ boardUrl }) {
 
 
     useEffect(() => {
+        document.documentElement.scrollTo(0, 0);
         fetchData();
         if (newDatas.length > 1) {
             setNewTitle(newDatas.find((a) => { return a.id === parseInt(setid) }).title);
@@ -75,6 +77,7 @@ function BoardUpdate({ boardUrl }) {
     return (
         <>
             <MainStyle>
+                <Header />
                 <div>
                     <NavMain />
                 </div>

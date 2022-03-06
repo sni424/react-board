@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import postPic from '../../assets/images/2h6crhh836sfyu4dai13.webp';
 import SortTaps from "./SortTaps";
-import Posts from "./Posts";
 import Login from './Login';
+import PostBoard from "./PostBoard";
 
 const MainMenu = () => {
+
+    const detailUrl = 'Board';
+    const boardUrl = "http://localhost:8000/boards";
+    const studyDetailUrl = 'studyBoard';
+    const studyUrl = "http://localhost:8000/studyBoards";
+    const jobDetailUrl = 'jobBoard';
+    const jobUrl = "http://localhost:8000/jobBoards";
+    const qnaDetailUrl = 'qnaBoard';
+    const qnaUrl = "http://localhost:8000/qnaBoards";
+
+
     return (
         <>
             <InnerBox>
@@ -13,23 +24,20 @@ const MainMenu = () => {
                 <MainHeader>
                     <SortTaps />
                 </MainHeader>
-                {/* First Post with Pic */}
                 <PostSection>
                     <PostImg></PostImg>
-                    <Posts />
                 </PostSection>
+                {/* First Post with Pic */}
+                <PostBoard detailUrl={detailUrl} boardUrl={boardUrl} />
                 {/* TEST: Second Post without pic */}
-                <PostSection>
-                    <Posts />
-                </PostSection>
+                <PostBoard detailUrl={studyDetailUrl} boardUrl={studyUrl} />
                 {/* Login */}
                 <LoginSection>
                     <Login />
                 </LoginSection>
                 {/* TEST */}
-                <PostSection>
-                    <Posts />
-                </PostSection>
+                <PostBoard detailUrl={jobDetailUrl} boardUrl={jobUrl} />
+                <PostBoard detailUrl={qnaDetailUrl} boardUrl={qnaUrl} />
             </InnerBox>
         </>
     );
