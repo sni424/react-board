@@ -5,8 +5,9 @@ import PageNum from "../../components/Pagination";
 import NavMain from "../../components/navMain/NavMain";
 import axios from "axios";
 import styled from "styled-components";
+import Header from "components/Header";
 
-function BoardList({ boardUrl }) {
+function BoardList({ boardUrl, detailUrl, createUrl }) {
 
     const [newDatas, setNewDatas] = useState([]);
     const fetchData = async () => {
@@ -28,12 +29,14 @@ function BoardList({ boardUrl }) {
 
     const [checkTrue, setcheckTrue] = useState(true);
     useEffect(() => {
+        document.documentElement.scrollTo(0, 0);
         fetchData();
     }, [currentPage, checkTrue])
 
 
     return (
         <MainStyle>
+            <Header />
             <div>
                 <NavMain />
             </div>
@@ -64,14 +67,14 @@ function BoardList({ boardUrl }) {
                         </Thead>
                         {currentPosts.map((a, i) => {
                             return <Tbody>
-                                <Newli title={a.title} key={i} index={a.id}></Newli>
+                                <Newli detailUrl={detailUrl} title={a.title} key={i} index={a.id}></Newli>
                             </Tbody>
                         })
                         }
                     </Table>
                     <LastDiv>
                         <PageNum currentPage={currentPage} checkTrue={checkTrue} setcheckTrue={setcheckTrue} postPage={postPage} newDatas={newDatas} setCurrentPage={setCurrentPage}></PageNum>
-                        <Link to="/write">
+                        <Link to={`/${createUrl}`}>
                             <SerchButton>
                                 <ButtonA href="#">
                                     글쓰기
@@ -85,7 +88,7 @@ function BoardList({ boardUrl }) {
     );
 };
 
-function Newli({ title, index }) {
+function Newli({ title, index, detailUrl }) {
 
     let [newindex, setNewIndex] = useState(`${index}`);
 
@@ -96,7 +99,7 @@ function Newli({ title, index }) {
                 7
             </Td>
             <Td>
-                <Link to={`/Board/detail/${newindex}`}>
+                <Link to={`/${detailUrl}/detail/${newindex}`}>
                     {title}
                 </Link>
             </Td>

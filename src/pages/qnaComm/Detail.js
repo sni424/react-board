@@ -1,12 +1,12 @@
 import React from "react";
 import BoardDetail from "components/Board/Detail";
 
-function StudyDetail() {
+function QnaDetail() {
 
-    const boardUrl = 'http://localhost:8000/studyBoards';
-    const replyUrl = 'http://localhost:8000/studyReply';
-    const updateUrl = 'studyUpdate';
-    const preUrl = "/studyBoard";
+    const boardUrl = 'http://localhost:8000/qnaBoards';
+    const replyUrl = 'http://localhost:8000/qnaReply';
+    const updateUrl = 'qnaUpdate';
+    const preUrl = "/qnaBoard";
 
     return (
         <>
@@ -19,4 +19,4 @@ function StudyDetail() {
     )
 };
 
-export default StudyDetail;
+export default QnaDetail;

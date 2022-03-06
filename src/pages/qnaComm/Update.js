@@ -1,10 +1,10 @@
 import React from "react";
 import BoardUpdate from "components/Board/Update";
 
-function StudyUpdate() {
+function QnAUpdate() {
 
-    const boardUrl = 'http://localhost:8000/studyBoards';
-    const preUrl = 'studyBoard/detail';
+    const boardUrl = 'http://localhost:8000/qnaBoards';
+    const preUrl = 'qnaBoard/detail';
     return (
         <BoardUpdate
             boardUrl={boardUrl}
@@ -13,4 +13,4 @@ function StudyUpdate() {
     );
 };
 
-export default StudyUpdate;
+export default QnAUpdate;

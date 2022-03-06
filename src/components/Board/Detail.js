@@ -6,8 +6,9 @@ import Profile from "../../assets/images/profile.png"
 import axios from "axios";
 import NavMain from "../../components/navMain/NavMain";
 import EditFooter from '../../components/reply/EditFooter';
+import Header from "components/Header";
 
-function BoardDetail({ boardUrl, replyUrl }) {
+function BoardDetail({ boardUrl, replyUrl, updateUrl, preUrl }) {
 
     const [newDatas, setNewDatas] = useState([]);
     const fetchData = async () => {
@@ -22,7 +23,7 @@ function BoardDetail({ boardUrl, replyUrl }) {
     }
 
     let { setid } = useParams();
-    let [put, setPut] = useState(`/putndelete/${setid}`);
+    let [put, setPut] = useState(`/${updateUrl}/${setid}`);
     const navi = useNavigate();
 
     function removeText() {
@@ -34,7 +35,7 @@ function BoardDetail({ boardUrl, replyUrl }) {
                         url: `${boardUrl}/${parseInt(setid)}`,
                     }).then(() => {
                         alert("삭제되었습니다.");
-                        navi('/Board');
+                        navi(`${preUrl}`);
                     }).catch(err => {
                         return alert(err.message);
                     })
@@ -46,6 +47,7 @@ function BoardDetail({ boardUrl, replyUrl }) {
     }
 
     useEffect(() => {
+        document.documentElement.scrollTo(0, 0);
         fetchData();
     }, [])
 
@@ -53,6 +55,7 @@ function BoardDetail({ boardUrl, replyUrl }) {
     return (
         <>
             <MainStyle>
+                <Header />
                 <div>
                     <NavMain />
                 </div>

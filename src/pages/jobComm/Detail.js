@@ -1,12 +1,12 @@
 import React from "react";
 import BoardDetail from "components/Board/Detail";
 
-function StudyDetail() {
+function JobDetail() {
 
-    const boardUrl = 'http://localhost:8000/studyBoards';
-    const replyUrl = 'http://localhost:8000/studyReply';
-    const updateUrl = 'studyUpdate';
-    const preUrl = "/studyBoard";
+    const boardUrl = 'http://localhost:8000/jobBoards';
+    const replyUrl = 'http://localhost:8000/jobReply';
+    const updateUrl = 'jobUpdate';
+    const preUrl = "/jobBoard";
 
     return (
         <>
@@ -19,4 +19,4 @@ function StudyDetail() {
     )
 };
 
-export default StudyDetail;
+export default JobDetail;

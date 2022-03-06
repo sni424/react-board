@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 import userPic from '../../assets/images/6.png';
 
-const Posts = () => {
+const Posts = ({ title, index, detailUrl }) => {
+
+
     return (
         <>
             <PostInfo>
@@ -21,7 +23,9 @@ const Posts = () => {
                     <PostStyle>
                         <div>
                             <PostHone>
-                                <Link to="/content">Flask Stripe Sample - Open-Source, simple eCommerce APP</Link>
+                                <Link to={`/${detailUrl}/detail/${index}`}>
+                                    {title}
+                                </Link>
                             </PostHone>
                         </div>
 

@@ -4,10 +4,16 @@ import BoardDetail from "components/Board/Detail";
 function CommunityDetail() {
 
     const boardUrl = 'http://localhost:8000/boards';
-    const replyUrl = 'http://localhost:8000/boardsreply';
+    const replyUrl = 'http://localhost:8000/boardsReply';
+    const updateUrl = 'putndelete';
+    const preUrl = "/Board";
 
     return (
-        <BoardDetail boardUrl={boardUrl} replyUrl={replyUrl}></BoardDetail>
+        <BoardDetail
+            boardUrl={boardUrl}
+            replyUrl={replyUrl}
+            updateUrl={updateUrl}
+            preUrl={preUrl} />
     );
 };
 

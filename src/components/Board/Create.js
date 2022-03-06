@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import NavMain from "../../components/navMain/NavMain";
 import EditFooter from '../../components/reply/EditFooter';
+import Header from "components/Header";
 
-function BoardCreate({ boardUrl }) {
+function BoardCreate({ createLink, preUrl }) {
     const [newDatas, setNewDatas] = useState([]);
     const fetchData = async () => {
         try {
-            const res = await axios(boardUrl)
+            const res = await axios(createLink)
             const Data = await res.data;
             return setNewDatas(Data)
         }
@@ -34,7 +35,7 @@ function BoardCreate({ boardUrl }) {
         }
         axios({
             method: "POST",
-            url: boardUrl,
+            url: createLink,
             data: {
                 postid: parseInt(newId.current.value),
                 title: writeTitle.current.value,
@@ -43,7 +44,7 @@ function BoardCreate({ boardUrl }) {
         }).then(res => {
             setNewDatas([...newDatas, res])
             alert("생성이 완료되었습니다.");
-            navi('/Board');
+            navi(`${preUrl}`);
         }).catch(err => {
             return alert(err.message);
         })
@@ -54,11 +55,13 @@ function BoardCreate({ boardUrl }) {
     }
 
     useEffect(() => {
+        document.documentElement.scrollTo(0, 0);
         fetchData();
     }, [])
     return (
         <>
             <MainStyle>
+                <Header />
                 <div>
                     <NavMain />
                 </div>

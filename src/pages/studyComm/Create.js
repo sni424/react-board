@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import BoardCreate from "components/Board/Create";
-import axios from "axios";
 
-function ComunityCreate() {
+function StudyCreate() {
 
-    const urlLink = 'http://localhost:8000/studyboards';
+    const createLink = 'http://localhost:8000/studyBoards';
+    const preUrl = "/studyBoard";
 
     return (
-        <BoardCreate urlLink={urlLink}></BoardCreate>
+        <BoardCreate
+            createLink={createLink}
+            preUrl={preUrl} />
     );
 };
 
 
-export default ComunityCreate;
+export default StudyCreate;
